@@ -51,5 +51,9 @@ The estimated price is ₹{price} Lakhs."""
         "generated_summary": summary
     })
 
+import os
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Required by Render
+    app.run(host="0.0.0.0", port=port)
+
